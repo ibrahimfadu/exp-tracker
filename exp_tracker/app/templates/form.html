@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add expenses</title>
+</head>
+<body>
+  <div class="form_container">
+  <form method="POST">
+    {% csrf_token %}
+    <label for="name">Expense Name</label> <br>
+    <input type="text" name="Exp-name" placeholder="eg.(food )"> <br> 
+
+    <label for="amount">Amount</label> <br>
+    <input type="number" name="Exp-amount" placeholder=5000..><br> 
+    <br> <input type="submit" value="Submit">
+  </form>  
+
+  </div>
+</body>
+</html>
