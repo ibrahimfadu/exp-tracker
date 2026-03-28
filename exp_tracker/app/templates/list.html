@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>list</title>
+</head>
+<body>
+  <table>
+    
+  <tr>
+   <th>Name</th> 
+   <th>Amount</th>
+   <th>Delete</th>
+   <th>Update</th>
+  </tr>
+  {% for exp in expenses%}
+  <tr>
+    <td>{{ exp.name }}</td>
+    <td>{{ exp.amount }}</td>
+
+    <td> <form action="{% url 'delete_exp' exp.id %}">
+  {% csrf_token%}
+      <button type="Submit">Delete</button>
+    </form>
+    </td>
+    <td>
+<form action="{%url 'update_exp' exp.id %}">
+  {% csrf_token%}
+      <button type="Submit">Update</button>
+</form>
+
+    </td>
+  </tr>
+  {% endfor %}
+  </table>
+</body>
+</html>
